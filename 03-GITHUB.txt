@@ -1,0 +1,290 @@
+
+
+================================
+Source Code Repository Servers
+================================
+
+1) For code integration at one place
+
+2) Code Changes Tracking (who, when, why and what)
+
+
+=> We have several code repository servers in the market
+
+SVN (outdated)
+
+Git Hub
+
+BitBucket
+
+===========
+Git Hub
+===========
+
+-> Cloud based source code repo server
+
+-> Maintaning by Microsoft
+
+-> Trail and Commercial plans available.
+
+===============
+Git Env setup
+===============
+
+-> To use git hub as repo server we need to create account
+
+			URL : www.github.com
+
+-> Download and install git client software			
+
+		Git Client Download : https://git-scm.com/downloads
+
+-> Open Git bash and execute below commands
+
+	git config --global user.name "Ashok"
+
+	git config --global user.email "ashokitschool@gmail.com"		
+
+=================
+GIT Architecture
+==================
+
+1) Git Central Repo/REMOTE REPO[SAME]
+
+2) Working Tree
+
+3) Staging Area
+
+4) Local Repo
+
+==============
+Git Commands
+=============
+
+git init : To initialize working tree
+ 
+git add : To add files to staging area
+
+git status : To check working tree status
+
+git commit : To move changes from staging to local repo
+
+git push : To move changes from local repo to central repo
+
+git log : To check git repo commit history
+
+git clone : To download project from central to local[FIRST TIME]
+
+git pull : Get latest changes from central repo to local[BEFORE PUSHING WE NEED TO TAKE LATTEST CODE]
+
+git restore : to discard changes & to un-stage file
+
+git rm : To remove files[OR DELETE FILES][WE IF USE ONLU THESE -> IT WILL DELETE LOCAL]
+
+Note: When we execute 'git rm' then we have to execute 'commit and push' also to remove file from central repo.
+
+git revert : To revert our changes from central repo
+
+
+                INIT
+                		add .
+                		add <FNAME>
+                		add --a
+                		add * 
+                				  commit   
+                				                    push
+
+
+                WRK TREE --> STAGING  --> LOCAL REPO --> REM/CENTRAL REP
+
+                	   restore 
+                	   				reset
+                	   								revert
+
+                	   								remove[rm]      docker.file(delete) [commit+push]->delte central
+
+
+==============================================
+Pushing Maven Project to git hub central repo
+==============================================
+
+1) Create Central repo
+
+2) Open git bash from project folder
+
+3) Execute git bash script which is displayed in git central repo
+
+echo "# axis_bank_loans" >> README.md
+git init
+git add *
+git commit -m "first commit"
+git branch -M main
+git remote add origin <repo-url>
+git push -u origin main
+
+
+
+
+git config
+git init
+git status
+git add <filename>
+git add --a
+git restore
+git commit -m <msg>
+git reset
+git push
+git pull
+git clone
+git log
+git rm
+git revert
+
+===============
+Git Conflicts [IF WE USE ONLY MAIN]
+===============
+1]DIFF 2 FILES
+2]SAME FILE IN DIFF LINES
+3]SAME FILE SAME LINE[REMOVE UNWANTED CODE >>>>>>> <<<<<< CODE AND PUSH]
+
+
+-> When we are doing git push, git will check is there any push before our push operation, if there is no push then our push will be success.
+
+-> Before our push, if someone already pushed then our push will be rejected. Here we need to take git pull first then only we can push.
+
+Note: When we do git pull operation, if changes are in the same file and same line then we will get conflicts.
+
+=> We need to resolve git conflicts and we need to push without conflicts.
+
+
+=============
+Git Branches
+=============
+
+=> When multiple teams working on same repo it will become difficult to manage source code of all team members
+
+Ex : 
+
+20 developers available in our team
+
+5 ppl -> working on enhancements
+
+5 ppl -> working on CR
+
+5 ppl -> working on bug fixing
+
+5 ppl -> working R & D
+
+=> If all developers pushing their changes then it will become very difficult to manage source code.
+
+=> To avoid this problem we will use git branches
+
+=> Git branches will help us in achieving paralell development.
+
+-------------
+branch names
+-------------
+
+main (default)
+develop
+feature
+sit
+research
+release
+
+
+# cloning default branch (i.e main)
+git clone <repo-url> 
+
+cd <app-name>
+
+git checkout <branch-name>[TO SWITCH FROM ONE BR TO ANOTHER BR]
+
+# cloning develop branch
+git clone -b develop <repo-url>
+
+-----------------------
+What is Pull Request ?
+-----------------------
+
+-> I want to merge changes from one branch to another branch
+
+
+	Ex:   develop -----> main
+
+
+
+----------
+git stash
+----------
+
+you are watching a movie at home..... (1 hr completed...)
+
+mom told go out and get milk packet...
+
+pause movie then bring milk then continue movie.....
+
+
+morning 10 am manager assigned task-101...
+
+i am working on it... few changes i have made already...
+
+
+At 3 pm manager called and told that task-102 is high priority now... first complete task-102 and continue with 101...
+
+Note: In this scenario i can't push 101 task changes because those changes are not completed... i cant delete those changes because i spent 5 hours to write that code.
+
+-> In this scenario we can go for 'git stash' command.
+
+-> 'git stash' is used to save working tree changes to temp area and makes working tree clean.
+
+-> Once task 102 changes pushed then we can get our task-101 changes back to working tree using 'git stash apply'.
+
+
+
+===========================
+What is .gitignore file ?
+===========================
+
+=> It is used to ignore some files and folders from commit
+
+Ex : .classpath, .project, .settings and target folder
+
+=========================
+git merge vs git rebase
+=========================
+
+To merge changes from one branch to another branch
+
+merge : Will preserve commit history
+
+rebase : Will not preserve commit history
+
+===================
+Realtime Workflow
+==================
+
+-> Development team will raise jira ticket to create source code repository
+
+-> DevOps team will create source code repository and will share repository URL to development team.
+
+-> In our team one developer will create project folder structure and will push into source code repository.
+
+-> All the other developers will clone that repository and will start working on that.
+
+Note: Based on requirement we can create any no.of branches in repository.
+
+-> DevOps team will manage user permissions for the repository.
+
+		Ex: read access, write access
+
+-> When project is releasing to production, then code freeze will be there.
+
+-> When there is a code freeze, for all team members write permission will be removed.		
+
+Note: If we want write permission then we need to raise request to devops team with our manager approval.
+
+
+Note: To connect with company repository, we need to use VPN.
+
+Note: In project PMO team will be avialable to manage all the permissions required for the team.

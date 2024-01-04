@@ -1,0 +1,381 @@
+
+=======================
+Logging in Spring Boot
+========================
+
+Local Env : Developers will write the code and will test[write/test]
+
+DEV Env : Developers will perfrom integration testing
+
+SIT Env : Testing team will 'test app functionality'
+
+UAT Env : Client side team will 'test app functionality'S
+
+PROD Env : Live Deployment
+
+
+===================
+What is Logging ?
+===================
+
+=> The process of storing application execution details to console/ file is called as Logging
+
+=> To understand runtime behaviour of our code
+
+=> To identify exceptions in the code
+
+=> To identify root cause of the "exception"
+
+=====================
+Logging Architecture
+======================
+
+1) Logger
+
+2) Layout
+
+3) Appender
+
+=> Logger is a class which is used "to generate log msgs"[providing methods to perfom logging]
+
+			logger.trace()
+			logger.debug()
+			logger.info()	
+			logger.warn()		
+			logger.error()
+			
+=> Layout represents log msg format or pattern
+
+=> Appender[add] represents "destination to store log msgs"
+
+		Ex : ConsoleAppender (will print msgs on console)
+
+		Ex : FileAppender (will store msgs in file)
+
+==================
+Logging Levels	
+==================
+
+=> Log Level will decide which msgs should be generated/printed.
+
+
+			TRACE >  DEBUG  > INFO  > WARN > ERROR	
+
+
+=> When we set LOG level, from that level all higher levels will be printed.			
+
+Note: In springboot, the default log level is INFO.
+
+=> We can change log level in boot application like below
+
+logging.level.root = debug  note :: root[all]
+logging.file.name=ashokit.log
+
+
+-------------------------------------------------------
+@RestController
+public class MsgRestController {
+
+	private static Logger logger = LoggerFactory.getLogger(MsgRestController.class);
+
+	@GetMapping("/welcome")
+	public String getMsg() {
+
+		logger.info("getMsg() - execution stated..");
+
+		String msg = "Welcome to Ashok IT..!!";
+
+		try {
+			int i = 10 / 0;
+		} catch (Exception e) {
+			logger.error("Exception : " + e.getMessage());
+		}
+
+		logger.info("getMsg() - execution ended..");
+
+		return msg;
+	}
+}
+---------------------------------------------------------------
+
+=> In realtime , multiple users will access our application on daily basis.
+
+=> If we maintain single log file then lot of data will be stored in that file
+
+=> After few days/months we can't open that file because of huge size.
+
+=> To overcome this problem we will use Rolling concept in logging.
+
+=======================
+Rolling File Appender
+=======================
+
+2 ways
+
+1) Time Based Rolling
+
+	Ex: Create New Log file for every 24 hours (day wise)
+
+2) Size Based Rolling  
+
+	Ex: Store only 1 GB data in one log file
+
+
+=> We can configure rolling in 2 ways
+
+1) Properties / yml file
+
+2) xml configuration  (recommended)
+
+ex : logback.xml[default logging]
+
+if we want to add other we need to add
+-------------------------------------
+<!-- Log4j2 -->
+<dependency>
+    <groupId>org.apache.logging.log4j</groupId>
+    <artifactId>log4j-slf4j-impl</artifactId>
+    <version>2.x.x</version>
+</dependency>
+
+<!-- Logback -->
+<dependency>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-classic</artifactId>
+    <version>1.2.3</version>
+</dependency>
+
+<!-- Logstash Logback Encoder -->
+<dependency>
+    <groupId>net.logstash.logback</groupId>
+    <artifactId>logstash-logback-encoder</artifactId>
+    <version>6.6</version>
+</dependency>
+
+SLF4J Configuration:
+--------------------
+SLF4J serves as a simple facade for various logging frameworks.
+
+You don't need to include explicit SLF4J dependencies;
+
+ it's generally provided by other logging frameworks like Log4j2 and Logback.
+
+Log4j2 Configuration:
+---------------------
+Create a log4j2.xml file in the src/main/resources directory for Log4j2 configuration.
+
+Customize it according to your needs.
+
+Logback Configuration:
+----------------------
+Create a logback.xml file in the src/main/resources directory for Logback configuration. 
+
+Customize it based on your requirements.
+
+Logstash Logback Encoder Configuration:
+-----------------------------------------
+If you want to send logs to Logstash,
+
+modify the Logback configuration to include the Logstash Logback Encoder. Here's a basic example:
+
+xml
+------
+<appender name="logstash" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+</appender>
+
+<root level="info">
+    <appender-ref ref="logstash"/>
+</root>
+
+
+===============
+Logging Tools
+===============
+
+1) Log4J (vulnerability)[its hacking easily now removed that vulnerabilty]
+
+2) Log4j2
+
+3) Logback
+
+4) Logstash
+
+5) JCL[java console logging]
+
+Note: We will use SLF4J as a facede for logging.
+
+public void m1(list l)
+public void m2(arraylist al)
+
+				 ------
+                 SLF4J
+                 ------
+
+    Log4J     Log4j2    Logback   Logstash
+
+
+
+========================
+configuring logback.xml
+========================
+
+-> logback.xml file is used to configure logging information
+
+-> We will keep logback.xml file in src/main/resources folder
+
+-> Below is the sample logback.xml file
+
+
+<configuration>
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="RollingFile"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>MyApp.log</file>
+		<encoder>
+			<pattern>%d [%thread] %-5level %-50logger{40} - %msg%n</pattern>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>MyApp-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>1MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+			<totalSizeCap>10MB</totalSizeCap>
+		</rollingPolicy>
+	</appender>
+	<root level="INFO">
+		<appender-ref ref="Console" />
+		<appender-ref ref="RollingFile" />
+	</root>
+</configuration>
+
+
+
+======================
+Log Monitoring Tools
+======================
+
+=> These are used for monitoring logs of our application
+
+
+1) ELK / EFK  - Open source s/w
+
+2) Splunk - Commercial s/w
+
+winscp--> to downlod log files
+
+
+Splunk : https://youtu.be/BUfOuWLgnMU?si=i9K_iS7FJ9pISIok
+
+EFK : https://youtu.be/8MLcbbfEL1U?si=OpRu00vghWF5lMNO
+
+
+Once join the company PMO TEAM WILLP RROVIDES
+---------------------------------------------
+splunk or elk/efk stack credentials
+-----------------------------------
+HOST IP
+USERNAME
+PASSWORD
+PATH[WHERE LOG FILES ARE AVAILABLE FOR MONITORUING]
+
+
+if any problem is occured in the production just chekc log message by using splunk or efk
+(check log messages which class,which method, which line...)
+
+LAST- 15 MIN
+LAST- 30 MIN 
+LAST- 1HR
+TODAY
+WEEKLY
+MONTHLY
+DATA BETWEEN 
+TIME BETWEEN
+================================================================================================
+COMMAND TO SEARCH USER LOGS OR QUERIES TO SEARCH
+================================================================================================
+Search for Events with a "Specific Keyword":
+--------------------------------------------
+This query will return events that contain a specific keyword.
+
+index=<your_index> keyword_to_search
+
+
+
+Retrieve Log Messages within a "Time Range":
+--------------------------------------------
+Use the earliest and latest time modifiers to specify a time range.
+
+
+index=<your_index> earliest="01/01/2023:00:00:00" latest="01/02/2023:00:00:00" keyword_to_search
+
+
+Filter Log Messages by Source Type:
+--------------------------------------------
+If your logs have different source types, you can filter by source type.
+index=<your_index> sourcetype=your_source_type keyword_to_search
+
+
+
+Count the Number of Log Messages:
+--------------------------------------------
+To get a count of log messages, use the stats command.
+
+
+index=<your_index> | stats count
+
+
+Search for Log Messages with a Specific Error Level:
+----------------------------------------------------
+If your logs have different log levels (e.g., INFO, WARN, ERROR), you can filter by log level.
+
+
+index=<your_index> log_level=ERROR
+
+
+Aggregate Log Messages by a Field:
+--------------------------------------------
+Use the stats command to aggregate log messages based on a specific field.
+
+
+index=<your_index> | stats count by field_name
+
+
+
+Search for Log Messages with a Specific IP Address:
+-----------------------------------------------------
+If your logs contain IP addresses, you can search for messages related to a specific IP.
+
+index=<your_index> ip_address="xxx.xxx.xxx.xxx"
+
+
+Search for Log Messages with a Specific User:
+----------------------------------------------
+If your logs include user information, you can search for messages related to a specific user.
+
+index=<your_index> user="username"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,267 @@
+
+===============
+Build tools
+==============
+
+-> Maven is a free s/w developed by apache org
+
+-> Maven s/w developed using java language
+
+-> Maven is used for java projects build process
+
+======================
+What maven can do ?
+=======================
+
+1) It creates project folder structure
+
+2) It will download required dependencies (jars)
+
+3) It will compile our source code
+
+4) It will execute Junit test cases
+
+5) It will package our application as jar or war
+
+====================
+Maven Objectivies
+=====================
+
+1) simplify build process
+
+2) unfiform build system
+
+3) Quality information
+
+4) Encouraging better dev practices
+
+-------------------
+How to use maven
+-------------------
+
+1) CLI
+
+2) IDE
+
+==============
+Maven Setup
+==============
+
+1) java home setup  (upto jdk directory)
+
+2) java path setup  (upto jdk/bin directory)
+
+3) maven home setup (upto maven directory)
+
+4) maven path setup (upto maven/bin directory)
+
+====================
+Maven Terminology
+====================
+
+1) archetype
+2) groupId
+3) artifactId
+4) version
+5) packaging
+6) dependencies
+7) repositories
+8) goals
+9) scope
+10) pom.xml
+
+
+=> archetype : repesents project template
+
+		quick-start : stand-alone app
+
+		web-app : web application
+
+=> groupId : Represents company name
+
+		ex: com.tcs
+			com.orcle
+			in.ashokit		
+
+=> artifactId : Represents project name
+
+		ex: sbi-car-loan-app
+
+			flipart-report-app
+
+=> version : represents project version number
+
+			snapshort : under development
+			release : released to customer
+
+			ex: ashokit-release-1.0
+				ashokit-snapshot-2.0							
+
+=> packaging : represents application package format
+
+			ex : jar or war or pom
+
+=> dependencies : libraries/jars required for application
+
+		Ex: junit, spring, hibernate, kafka, redis....
+
+		URL : https://mvnrepository.com/
+
+=> Repositories : The location where maven dependencies will be maintained.
+
+			a) central repo
+			b) remote repo (private repo)
+			c) local repo  (in our system)
+
+=> Goals : To perform maven build process
+
+		clean : delete byte code (target)
+
+		compile : compile source code
+
+		test : execute junits
+
+		package : package as jar or war
+
+Note: Every goal is associated with plugin
+
+=> scope : Represents when to use dependency
+
+=> pom.xml : Project Object Model
+
+==================================
+Create Maven Quickstart Project
+==================================
+
+mvn archetype:generate -DgroupId=in.ashokit -DartifactId=ashokit-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+
+=================================
+Create Maven Web Project
+==================================
+
+
+mvn archetype:generate -DgroupId=in.ashokit -DartifactId=ashokit-web-app -DarchetypeArtifactId=maven-archetype-webapp -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+
+=======================
+Maven Goals Executions
+=======================
+
+=> Go inside project directory and open cmd
+
+=> Execute goals like below
+
+		$ mvn clean install
+
+
+mvn package vs mvn install
+
+
+transitive dependency mgmt		
+
+dependency exclusion
+
+<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>6.1.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+			</exclusions>
+</dependency>
+
+
+========================
+Maven Dependency Scopes
+========================
+
+=> Scope represents when to include maven dependency in classpath
+
+=> We have 6 scopes in maven
+
+1) compile
+
+2) provided
+
+3) runtime
+
+4) system
+
+5) test
+
+6) import
+
+
+===========================
+Maven Multi Module Project
+===========================
+
+=> Project contains multiple modules
+
+1) Product Catalog Module
+
+2) Cart Module
+
+3) Payment Module
+
+4) Admin Module
+
+5) Reports Module
+
+
+
+=========
+Summary
+=========
+
+1) What is Build Tool
+
+2) Build Tools For Java
+
+3) Maven Introduction
+
+4) Maven Setup in Windows
+
+5) Maven Terminology
+
+6) What is pom.xml
+
+7) Maven Project Creation (CLI & IDE)
+
+8) Maven Dependencies
+
+9) Maven Repositories
+
+10) Maven Goals
+
+11) Transitive Dependency Mgmt
+
+12) Dependency Exclusion
+
+14) Dependency Scope
+
+15) Maven Multi Module Project
+
+*** 16) Working with remote repo (pending) ***
+
+
+#### Gradle Video ::: www.youtube.com/watch?v=I84f9Q5bFBA&t=953s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

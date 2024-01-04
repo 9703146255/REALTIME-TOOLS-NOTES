@@ -1,0 +1,280 @@
+
+==================
+Agile with JIRA
+==================
+
+SDLC
+Waterfall methodology
+Agile methodology
+
+
+
+=> SDLC stands for software development life cycle
+
+1) Requirements Gathering
+2) Analysis
+3) Design
+4) Development
+5) Testing
+6) Delivery
+7) Maintenence
+
+================
+Waterall Model
+================
+
+=> Waterall is a linear model / sequential model
+
+=> We will move only in forward direction
+
+=> After one stage completed then only we will move to next stage
+
+=> Requirements are fixed
+
+=> Budget is fixed
+
+=> Client will see the project at the end.
+
+=> Earlier people used to follow waterfall methodology to develop applications but in today's world it is not recommended.
+
+=> To overcome problems with Waterfall model people are using Agile model
+
+============
+Agile Model
+============
+
+=> Most famous and trending SDLC methodology to develop and deliver our applications[DEV&DEL]
+
+=> Agile is an iterative model.
+
+=> In Agile model, development + testing + delivery is a continuous process.[DEV&TEST&DEL]
+
+=> We don't deliver entire application in one shot.
+
+=> Application will be delivered in multiple sprints.
+
+==================
+Agile Team Roles
+===================
+
+1) Product Owner[COMMUNICATE WITH CLINTS]
+2) Scrum Master [MANAGING ALL THE TEAMS]
+3) Tech Lead    [WHO KNOW ALL THINGS IN THE PROJECT OR MOST EXP PERSON]
+4) Team members
+
+==================
+Agile Terminology
+==================
+
+a) Backlog Grooming
+b) Sprint Planning[MEETING]
+c) Story
+d) Story Points
+e) Sprint
+f) Scrum
+g) Retro
+
+a) Backlog Grooming
+====================
+-> Backlog grooming is a "meeting to identify pending works" in the project.
+
+Note: After identifying pending works we will create stories in jira (story means task).
+
+-> For every story we will assign story points.
+
+Note: Story points represents duration to complete story.
+
+			3 points ---> 8 hours to complete (1 day)
+
+			5 points ---> 16 hours to complete (2 days)
+
+			8 points ---> 24 hours to complete (3 days)
+
+b) Sprint Planning[MEETING]
+----------------------------
+
+-> Sprint Planning meeting is used to prioritize backlog stories.[TAKE HIGH PRIORITY TASK[PRIORITAIZE]]
+
+-> Once prioritization completed then sprint will be started.
+
+			Sprint Duration : 2 weeks (10 working days)
+
+
+
+ Scrum Call
+============
+-> Once sprint started everyday scrum call will be there....
+
+Note: In scrum call, every team member "should give work status update.""
+
+		What you are doing today ?
+
+		When it will be completed ?
+
+		Do u have any issues ?
+
+Retro meeting
+==============
+-> Retro meeting is like a review meeting..[movie review]
+
+-> In Retro Meeting we will discuss below points..
+
+				-> What went well
+				-> What went wrong
+				-> Lessons learnt
+				-> Any improvements
+				-> Suggestions
+				-> New Ideas
+
+
+
+
+
+=====
+JIRA
+=====
+
+-> Atlasian company product
+
+-> It is used for project management
+
+-> It is also used for Bug reporting...
+
+-> For learning purpose we can use trial version of jira
+
+Note: In companies we will use licensed version.
+
+
+	https://team.atlassian.com/your-work
+
+-----------------------------------------------------
+
+=> Login into jira
+
+=> Create Project using Scrum template
+
+=> Create Stories in Backlog
+
+=> Prioriotize backlog stories (add them to sprint)
+
+=> Start sprint
+
+=> Assign story and work on it
+
+=> Once story completed update story status in jira
+---------------------------------------------------------------------
+
+ASAP: As Soon As Possible
+OOO: Out of Office
+FYI: For Your Information
+EOD: End of Day
+WFH: Work From Home
+WIP: Work in Progress
+ETA: Estimated Time of Arrival
+TBD: To Be Determined
+PM: Project Manager or Post Meridiem (afternoon/evening)
+AM: Ante Meridiem (morning)
+CC: Carbon Copy
+BCC: Blind Carbon Copy
+AFAIK: As Far As I Know
+IMHO: In My Humble Opinion
+ROI: Return on Investment
+KPI: Key Performance Indicator
+POC: Point of Contact
+SLA: Service Level Agreement
+IRL: In Real Life
+TGIF: Thank God It's Friday
+------------------- Email format For git Repo creation ----------------------
+
+To : axis.devopsteam@tcs.com
+
+cc : axis.devteam@tcs.com
+
+Subject : Git Repo Creation | Axis-1
+
+Body : 
+
+Hi DevOps Team,
+
+Please create new git hub repo for Axis bank loan applicaton.
+
+Repo Name  : Axis_Loans_App
+
+@John : Please approve.
+
+Thanks,
+Ashok.
+
+--------------------------Email for status update/if your not attend meeting ----------------------
+
+To : steve.m@tcs.com
+
+cc : axis.devteam@tcs.com
+
+Subject : Ashok work status 
+
+Body :
+
+Hi Steve,
+
+Due to personal emergency i am unable to join scrum call today.
+
+PFB work status for 29-Dec
+
+I am working on AXIS-1089
+
+It is targeted to complete by tomorrow EOD
+
+I don't have any issues.
+
+Thanks,
+Ashok.
+
+--------------------------- Email format for OOO -------------------------
+
+To: steve.m@tcs.com
+
+cc : axis.devteam@tcs.com
+
+Subject : OOO
+
+Hi Steve,
+
+As discussed over call, i will be OOO from 01-Jan to 25-Jan.
+
+If any emergency, please reach me on + 91 - 76868686868
+
+Thanks,
+Ashok.
+
+------------------------------------------------------------------------------
+
+When we are taking long leave then we need to setup Auto reply[IN OUTLOOK] to our mail id
+
+like below 
+
+
+Hi,
+
+Thanks for your email...
+
+I am OOO from 01-Jan to 25th jan , if any emergency please reach out to my team member Anil <anil.k@tcs.com>
+
+Thanks,
+Ashok.
+
+--------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
