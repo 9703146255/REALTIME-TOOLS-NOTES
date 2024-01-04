@@ -1,4 +1,9 @@
-
+01]WHAT ARE THE ENIVRONEMTNS IN SPRING BOOT
+02]What is Logging ?
+03]Logging Architecture
+04]Logging Levels	
+05]Rolling File Appender
+06]Logging Tools
 =======================
 Logging in Spring Boot
 ========================
@@ -208,7 +213,7 @@ Note: We will use SLF4J as a facede for logging.
 public void m1(list l)
 public void m2(arraylist al)
 
-				 ------
+		 ------
                  SLF4J
                  ------
 
@@ -219,7 +224,7 @@ public void m2(arraylist al)
 ========================
 configuring logback.xml
 ========================
-
+-> These is the default file without adding dependency we can perform logging[sb will taken care]
 -> logback.xml file is used to configure logging information
 
 -> We will keep logback.xml file in src/main/resources folder
