@@ -267,7 +267,7 @@ Log Monitoring Tools
 => These are used for monitoring logs of our application
 
 
-1) ELK / EFK  - Open source s/w
+1) ELK / EFK  - Open source s/w[Fluent-d(collect log files from diff microservices),ElasticSearch(store inside these),Kubana(provide buetiful ui for see logging messages]
 
 2) Splunk - Commercial s/w
 
