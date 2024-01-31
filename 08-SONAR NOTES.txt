@@ -1,5 +1,5 @@
 =============
-Sonar Qube
+Sonar Qube[bugs,csmells,ccoverage,duplicate code,vulnarabilities
 =============
 
 => It is used for code quality checking
