@@ -1,0 +1,138 @@
+
+==============================================
+Project Name : (HIS) Health Insurance System
+==============================================
+
+Client : Rohde Island State Gov, USA
+
+Tech Stack : Java, Spring Boot, Microservices, Angular, Oracle DB, AWS Cloud.
+
+Description : 
+
+=> The main objective of HIS is to provide health and insurance plans for RI state citizens who are needy.
+
+=> Using HIS, RI state providing below plans for citizens
+
+1) SNAP (foodstamp)
+2) CCAP (child care)
+3) Medicaid (health)
+4) Medicare (health -> senior citizens)
+5) QHP (Qualified Health Plan)
+6) RIW (Rhode Island Works)
+
+Note: Every plan will have some conditions to determine eligibility. 
+
+=> When citizen apply for the plan HIS will determine citizen eligibility based on plan conditions.
+
+=> If citizen data matching with plan conditions then citizen will be approved for the plan. Approved citizens will get benefit from Govt on monthly basis.
+
+=> If Citizen Data not matching with plan conditions then citizen will be denied for the plan.
+
+
+==============
+HIS Modules
+==============
+
+1) Admin 
+2) Citizen
+3) AR 
+4) DC
+5) ED
+6) CO (Notices)
+7) BI
+
+=> Admin module contains below functionalities
+
+			a) Plans Mgmt
+			b) Reports Download
+
+=> Citizen module contains below functionalities
+
+			a) Register
+			b) Login
+			c) Dashboad
+			d) Forgot Pwd			
+
+=> AR module contains application registraion for citizen
+
+Note: Application should be created for citizen if citizen belongs to RI state.
+
+			SSN (social security number)
+
+=> DC module is used for citizen data collection
+
+			a) income data
+			b) employment data
+			c) family data
+			d) kids info
+			e) education info			
+
+=> ED module is used for citizen eligibility determination
+
+		if conditions satisfied => approval
+
+		if conditions not satisfied => denial
+
+=> CO module is used for correspondence generation (Notice)
+
+=> BI module is used for benefit issuance
+
+
+----------------------------------------------------
+
+1) Self Introduction
+
+2) Explain about your project
+
+3) Roles & Responsibilities
+
+4) What are the challenges you faced in the project
+
+
+========================
+SSA-WEB API Development
+========================
+
+1) Develop SSA Web API and deploy in aws cloud (add swagger documentation)
+
+input : citzen-name, citizen-dob, citizen-ssn
+
+output : citizen-ssn, state-name
+
+----------------------------
+Logic to decide state name
+----------------------------
+
+If ssn starts with 1 - New Jersey
+
+if ssn starts with 2 - Texas
+
+If ssn starts with 3 - Ohio
+
+If ssn starts with 4 - Rhode Island
+
+If ssn starts with 5 - Kentucky
+
+...
+
+If ssn start with 9 - Albama
+
+
+
+===============================
+Assignment For 10th & 11th Feb
+================================
+
+1) Develop SSA Web API and deploy in AWS Cloud
+
+2) Setup Service Registry
+
+3) Setup Admin Server
+
+4) Setup Zipkin Server
+
+5) Setup Config Server
+
+6) Develop PLANS_API
+
+7) Develop CITIZEN-API

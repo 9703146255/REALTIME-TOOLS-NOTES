@@ -65,22 +65,38 @@ Module-1 : Software Industry Info  (3 - 4 days)
 
 Module-2 : Realtime Tools (20+ Tools)
 
-				- Maven & Gradle
-				- Nexus
-				- Git Hub & BitBucket
-				- SonarQube
-				- Junit & Mocking
-				- Jaccoco
-				- Logging (logback)
-				- Putty & EFK 
-				- JMETER
+				- Maven & Gradle[build tools]
+
+				- Nexus & jfrog [remote repositories tools(companies will maintain) for dependencies]
+
+				- Git Hub & BitBucket[version controll s/w]
+
+				- SonarQube[code review s/w]
+
+				- Junit & Mocking[unit testing frameworks]
+
+				- Jaccoco[code coverage s/w]]
+
+				- Logging (logback(default),logstach)
+
+				- Putty & EFK [winscp,splunk]
+
+				- JMETER[to test performance of our application]
+
 				- Docker - containerization
+
 				- Kubernetes (K8S) - orchestration
+
 				- Jenkins (CI CD) 
+
 				- Postman - API testing
+
 				- Swagger - documentation
+
 				- Kafka (Message Broker)
+
 				- Redis Cache
+
 				- JIRA - project mgmt
 
 Module-3 : Mini Projects (2)
@@ -140,12 +156,12 @@ Ex:  online shopping
 
 
 ==================
-Types of projects
+Types of projects[SMM]
 ==================
 
 3 types of types of projects
 
-1) Scratch development ( 15% )	 
+1) Scratch development ( 15% )	 [end to end]
 
 2) Maintenence / support project ( 75 %)
 
@@ -157,7 +173,7 @@ Types of projects
 
 
 =============================
-Types of software companies
+Types of software companies[PS]
 =============================
 
 1) product based
@@ -235,6 +251,8 @@ Bridge call
 3) WebEx
 
 4) Zoom
+
+5) Slack or Bluezeans
 
 
 MoM : Minutes of meeting

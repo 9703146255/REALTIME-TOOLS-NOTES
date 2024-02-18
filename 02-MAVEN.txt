@@ -59,13 +59,13 @@ Maven Setup
 Maven Terminology
 ====================
 
-1) archetype
-2) groupId
-3) artifactId
-4) version
-5) packaging
-6) dependencies
-7) repositories
+1) archetype    [type of the project]
+2) groupId      [company name or name of the company]
+3) artifactId   [Project name                       ]
+4) version      [Represent project version number   ]
+5) packaging    [represents application package format] 
+6) dependencies [Libraries or jars required for our application]
+7) repositories [The location where maven dependencies will be maintained.][local,remote,central]
 8) goals
 9) scope
 10) pom.xml
@@ -110,7 +110,7 @@ Maven Terminology
 => Repositories : The location where maven dependencies will be maintained.
 
 			a) central repo
-			b) remote repo (private repo)
+			b) remote repo (private repo)(companies will maintain(jfrog/nexous))
 			c) local repo  (in our system)
 
 => Goals : To perform maven build process
@@ -122,6 +122,8 @@ Maven Terminology
 		test : execute junits
 
 		package : package as jar or war
+
+		site: generate the documentation
 
 Note: Every goal is associated with plugin
 
@@ -176,7 +178,7 @@ dependency exclusion
 
 
 ========================
-Maven Dependency Scopes
+Maven Dependency Scopes[CPRSTI]
 ========================
 
 => Scope represents when to include maven dependency in classpath
@@ -194,6 +196,47 @@ Maven Dependency Scopes
 5) test
 
 6) import
+
+Compile Scope:
+--------------
+compilation
+execution[RUNTIME]
+Dependencies needed for both compilation and execution of the application.
+
+
+Provided Scope:
+---------------
+NEED 		-> 	Compilation
+Provided 	-> 	Runtime[execution]
+Dependencies needed for compilation but expected to be provided by the runtime environment during execution.
+
+
+Runtime Scope:
+--------------
+Dependencies not needed for compilation but required during the execution of the application.
+
+
+System Scope:
+-------------
+Similar to provided scope, but you must provide the path to the JAR; 
+not recommended for portability.
+
+
+Test Scope:
+-----------
+Dependencies used only for testing purposes, not included in the final application.
+
+
+Import Scope:
+------------
+Used in the <dependencyManagement> section to consume dependencies from other projects; 
+
+not for actual inclusion in the project's classpath.
+
+
+
+
+
 
 
 ===========================
