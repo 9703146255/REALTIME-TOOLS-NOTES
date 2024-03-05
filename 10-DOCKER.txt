@@ -1,7 +1,7 @@
 
 Join Docker whatsapp group for notes and videos : https://chat.whatsapp.com/HplvBTFASKp13WX7vofeHD
 
-================
+=================
 Docker Setup 
 =================
 
@@ -316,3 +316,105 @@ $ docker build -t pyapp .
 $ docker images
 
 $ docker run -d -p 5000:5000 pyapp
+
+
+================
+Docker Compose
+================
+
+=> It is used to manage multi container based applications
+
+## Docker-Compose Setup : https://github.com/ashokitschool/DevOps-Documents/blob/main/03-Docker-Compose-Setup.md
+
+=> To work with docker compose we need to create docker-compose.yml file
+
+------------------SpringBoot-MySQL-Docker-Compose.yml------------------
+
+version: "3"
+services:
+  application:
+    image: spring-boot-mysql-app
+    ports:
+      - "8080:8080"
+    networks:
+      - springboot-db-net
+    depends_on:
+      - mysqldb
+    volumes:
+      - /data/springboot-app    
+  mysqldb:
+    image: mysql:5.7
+    networks:
+      - springboot-db-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sbms
+    volumes:
+      - /data/mysql
+
+networks:
+  springboot-db-net:
+
+------------------SpringBoot-MySQL-Docker-Compose.yml------------------
+
+
+##Git Hub Repo : https://github.com/ashokitschool/spring-boot-mysql-docker-compose.git
+
+$ git clone <repo-url>
+
+$ sudo apt install maven
+
+$ cd <project-dir>
+
+$ mvn clean package
+
+$ docker build -t spring-boot-mysql-app .
+
+$ docker images
+
+$ docker-compose up -d
+
+$ docker-compose ps
+
+Note: Enable 8080 in security group
+
+=> Access application in browser
+
+	URL : http://public-ip:host-port/
+
+$ docker-compose down	
+
+
+========================
+Docker Workshop Summary
+========================
+
+1) What is Docker
+
+2) Why Docker
+
+3) What is Containerization
+
+4) Docker Setup in Linux
+
+5) Docker Architecture
+
+6) What is Dockerfile
+
+7) Dockerfile Keywords
+
+8) Working with Docker Images
+
+9) Docker Hub
+
+10) Working with Docker Containers
+
+11) Java Web App with Docker
+
+12) Spring Boot app with Docker
+
+13) Python app with Docker
+
+14) Docker Compose
+
+15) Spring Boot + MySQL using Docker Compose.

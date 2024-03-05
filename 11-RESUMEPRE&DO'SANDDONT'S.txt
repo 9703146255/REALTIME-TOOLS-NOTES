@@ -1,0 +1,142 @@
+
+===================
+Resume Preparation
+===================
+
+Section-1 : Your Contact Details (Name, New Email & New Phno)
+
+Section-2 : Professional Summary
+
+				- Your Expertize (10 points)
+
+Section-3 : Technical Skills
+
+				- Frontend : Angular
+				- Backend : Java, J2EE, Spring Boot & Microservices
+				- Database : Oracle, MySQL
+				- DevOps Tools : Maven, Git, Jenkins, Docker
+				- Cloud : AWS
+				- OS : Windows & Linux
+
+Section-4 : Company Details	/ Experience  (Not Required For Freshers)
+
+Section-5 : Educational Qualification (Highest)
+
+Section-6 : Project(s)
+
+			- Tech Stack
+			- Description (4 to 5 lines)
+			- Roles & Responsibilities
+
+Section-7 : Signature			
+
+
+==============================
+How to show gap as experience 
+==============================
+
+2022 => 2 years gap => Prepare resume with 2 years exp
+
+2021 => 3 years gap => Prepare resume with 3 years exp
+
+2020 => 4 years gap => Prepare resume with 3 years exp
+
+2019 => 5 years gap => Prepare resume with 3 years exp
+
+==================================
+Documents Required for experience
+==================================
+
+0) Official Email Id
+
+1) Offer Letter
+
+2) Hike Letters
+
+3) Payslips (3 months or 6 months)
+
+4) Bank Statements (6 months)
+
+5) Form 16
+
+6) Experience Letter / Service Letter
+
+7) Reliving Letter
+
+
+
+====================
+Joining Formalities
+====================
+
+1) Company Onboarding
+
+	- Fill up Employment documents
+
+	- Collect ID card (Badging section)
+
+	- Collect Laptop (IT dept)
+
+	- Collect salary account
+
+	- Induction Program
+
+2) Meeting with RM (Resource Manager)
+
+	- Identify openings in projects
+	- schedule project interview
+	- Attend project interview (PM/Client)
+
+3) Project Onboarding	
+
+	- Meeting with Manager & Lead
+	- Meeting with Team
+	- Join daily calls
+	- KT sessions
+	- Task assignment
+
+
+===================
+Exit Formalities
+==================
+
+=> After getting offer letter from other company, setup one to one meeting with Manager and tell to manager that u got offer from other company 
+
+=> Submit resignition (putting papers)
+
+=> HR team will send email regarding notice period and last working date.
+
+=> During Notice period, give KT to team members
+
+=> On last working date submit ID card, laptop and company belongings...
+
+=> On last working date, give lunch party to your team members....
+
+=> Download all (payslips + form 16 + employment letter + reliving letter)
+
+Note: After exit, with in one month our Full & Final Settlment will be completed.
+
+
+==================================
+Do's & Don'ts in Software Company
+==================================
+
+1) Don't discuss salary details with your team members
+
+2) Don't send any (company / project / client) related docs to your personal mails.
+
+3) Don't share your fake exp details with team members..
+
+4) Don't use social media websites in company provided systems
+
+5) Don't abscond from company
+
+------------------------------------------------------------
+
+1) Maintain good relationship with your team members
+
+2) Every month setup meeting with manager to discuss your performance
+
+3) Provide KT sessions for new team members
+
+4) Conduct internal trainings on new technologies for your team.
